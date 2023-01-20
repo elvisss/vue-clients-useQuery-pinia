@@ -5,7 +5,6 @@
   "scripts": {
     "server": "json-server --watch ./db/db.json --port 3001",
     "dev": "vite",
-    "dev:all": "run-p dev server",
     "build": "run-p type-check build-only",
     "preview": "vite preview",
     "build-only": "vite build",
@@ -13,6 +12,8 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@tanstack/vue-query": "^4.22.0",
+    "axios": "^1.2.3",
     "pinia": "^2.0.29",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"

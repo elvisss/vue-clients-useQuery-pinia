@@ -28,12 +28,6 @@ npm run dev
 npm run server
 ```
 
-### Run Vue and Backend at the same time
-
-```sh
-npm run dev:all
-```
-
 ### Type-Check, Compile and Minify for Production
 
 ```sh

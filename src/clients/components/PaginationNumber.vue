@@ -26,9 +26,22 @@
 </template>
 
 <script setup lang="ts">
-import useClients from '../composables/useClients';
+import { toRef } from 'vue';
 
-const { getPage, totalPages, currentPage } = useClients()
+interface Props {
+  totalPages: number
+  currentPage: number
+}
+
+const props = defineProps<Props>()
+const currentPage = toRef(props, 'currentPage')
+const totalPages = toRef(props, 'totalPages')
+
+const emit = defineEmits(['pageChanged'])
+
+const getPage = (page: number) => {
+  emit('pageChanged', page)
+}
 </script>
 
 <style scoped>

@@ -6,9 +6,9 @@ import type { Client } from '../interfaces/client'
 import { useClientsStore } from '@/store/clients'
 
 const getClients = async(page: number): Promise<Client[]> => {
-  await new Promise(resolve => {
+  /* await new Promise(resolve => {
     setTimeout(() => resolve(true), 1500)
-  })
+  }) */
 
   const { data } = await clientsApi.get<Client[]>('/clients', {
     params: {
@@ -29,8 +29,8 @@ const useClients = () => {
   })
 
   watch(data, (clients) => {
-    console.log('new watch')
     if (clients) {
+      console.log('new clients watch')
       store.setClients(clients)
     }
   })

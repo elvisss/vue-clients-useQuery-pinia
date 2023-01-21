@@ -19,9 +19,15 @@
 </template>
 
 <script setup lang="ts">
-import useClients from '../composables/useClients'
+import { toRef } from 'vue';
+import type { Client } from '../interfaces/client';
 
-const { isLoading, clients } = useClients()
+interface Props {
+  clients: Client[]
+}
+
+const props = defineProps<Props>()
+const clients = toRef(props, 'clients')
 </script>
 
 <style scoped></style>
